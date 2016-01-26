@@ -1,0 +1,23 @@
+Para utilizar está onda debes de:
+
+- Tener instalado php, apache y mysql
+
+- crear la base de datos "logomex" o como le quieras llamar
+
+- cambiar el archivo config/config.php con los datos:
+
+  $dbUser = "<tu user>";
+  $dbPass = "<tu pass>";
+  $dbName = "<la db de logomex>";
+  $dbHost = "<el host, yo uso la wildcard 'localhost'>";
+
+- y para probarlo puedes intentar algo como
+
+
+http://localhost/logomex_slim/clientes
+
+esto debe de generar un json con los clientes en la db
+
+
+chauu!
+

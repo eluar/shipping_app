@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Logomex Services</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="css/styles.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet"> -->
+</head>
+
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+    
+<div class="header"></div>
+
+<div class="container">
+    <div class="row">
+        <ul class="nav">
+            <li class="add-menu"><a id="main-new-link" href="#"><i class="icon-edit"></i> <span id="main-new-label" style="font-weight:bold">Envio</span> Nuevo</a></li>
+        </ul>
+        <div id="content" class="col-sm-12 col-md-12 col-lg-12"></div>
+    </div>
+
+    <footer class="col-sm-12 footer">
+        <p class="pull-right"><a href="#">Back Home</a></p>
+        
+        <p><a href="#clientes">Client Test</a> <a href="#contactos">Contacts Test</a></p>
+    </footer>
+
+</div>
+
+<script src="lib/jquery-1.7.2.min.js"></script>
+<script src="lib/underscore-min.js"></script>
+<script src="lib/backbone-min.js"></script>
+<!-- <script src="lib/bootstrap.js"></script> -->
+
+<!-- NOTE: memorystore.js will set up an in-memory datastore to allow you to experience the app without setting up
+back-end infrastructure. All the changes you make to the data will be lost the next time you access the app or hit Refresh.
+To use the app with a persistent RESTful back-end (provided in the GitHub repo), simply comment out the line below. -->
+<!--<script src="js/memorystore.js"></script>-->
+
+<script src="js/utils.js"></script><!--default-->
+
+<!-- models -->
+<script src="js/models/models.js"></script>
+<script src="js/models/clients.js"></script>
+<script src="js/models/contacts.js"></script>
+
+<!-- views -->
+<script src="js/views/paginator.js"></script>
+<script src="js/views/header.js"></script>
+<script src="js/views/clients/clientListView.js"></script>
+<script src="js/views/clients/clientDetails.js"></script>
+<script src="js/views/contacts/contactsListView.js"></script>
+<!-- <script src="js/views/contacts/contactsDetails.js"></script> -->
+<script src="js/views/about.js"></script>
+
+<!-- main -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<a href="#envios/<%= id %>" class="thumbnail plain">	
+    <h5><b><i class="glyphicon glyphicon-unchecked"></i>&nbsp;<%= numero_servicio %>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;
+    	<span class="glyphicon glyphicon-<%= statuses.status_key == 'E' ? 'play' : ( statuses.status_key == 'R' ? 'ok' : ( statuses.status_key == 'P' ? 'flag' : 'remove-circle' ) ) %>"></span></b></h5>
+    <i class="glyphicon glyphicon-cog"></i>&nbsp;<b><%= clientes.nombre %></b><br />
+    <i class="glyphicon glyphicon-user"></i>&nbsp;<b><%= contactos.nombre %></b><br />
+    <i class="glyphicon glyphicon-log-out"></i>&nbsp;<%= ubicaciones_origen.nombre %><br />     
+    <i class="glyphicon glyphicon-log-in"></i>&nbsp;<%= ubicaciones_destino.nombre %><br />     
+    <i class="glyphicon glyphicon-time"></i>&nbsp;<%= fecha_hora_servicio %><br />
+    <a class="btn changeStatus" data-key="R">Realizado</a>
+    <a class="btn changeStatus" data-key="P">Pagado</a>
+    <a class="btn changeStatus" data-key="E">En Proceso</a>
+    <a class="btn changeStatus" data-key="C">Cancelado</a>
+</a>

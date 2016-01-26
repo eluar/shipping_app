@@ -1,0 +1,82 @@
+<div class="row">
+
+    <form class="form-horizontal col-sm-12 col-md-12 col-lg-12">
+
+
+        <fieldset>
+
+            <legend>Detalles de Cliente</legend>
+            <br/>
+
+            <div class="row">
+                <div class="span9">
+
+                    <div class="form-group">
+                        <label for="clientId" class="control-label col-xs-8 col-md-2 col-lg-2">Id:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input id="clientId" name="id" type="text" class="form-control" value="<%= id === null ? '' : id %>" class="span1"
+                                   disabled/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre" class="control-label col-xs-8 col-md-2 col-lg-2">Nombre:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="<%= nombre %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="descripcion" class="control-label col-xs-8 col-md-2 col-lg-2">Descripci&oacute;n:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <textarea id="descripcion" name="descripcion" class="form-control" rows="6"><%= descripcion %></textarea>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono" class="control-label col-xs-8 col-md-2 col-lg-2">Telefono:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="telefono" name="telefono" value="<%= telefono %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activo" class="control-label col-xs-8 col-md-2 col-lg-2">Activo:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-6">
+                            <select class="col-xs-8 col-md-6 col-lg-6" id="active" name="activo" value="<%= activo %>">
+                                <option value="0" <%= activo == 0?'selected':'' %> >No</option>
+                                <option value="1" <%= activo == 1?'selected':'' %> >Si</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </fieldset>
+
+        <div class="form-actions">
+            <a href="#" class="btn btn-primary save">Registrar</a>
+            <a href="#" class="btn btn-danger delete">Borrar</a>
+        </div>
+
+    </form>
+
+</div>
+
+<div class="row status-bar">
+    <div class="span12">
+        <div class="alert alert-success" style="display: none">
+            <b>Exitooo!</b> Cliente Registrado con exito
+        </div>
+    </div>
+</div>

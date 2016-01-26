@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>LOGOMEX - Control de Envios</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8"> 
+  <!-- CSS de Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen"/>
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen"/>
+  <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen"/>
+  <link href="css/jquery.backbone.widgets.css" rel="stylesheet" media="screen"/>
+  <link href="css/jqueryui-1.10.4.min.css"  rel="stylesheet" media="screen"/>
+  <link href="css/styles.css" rel="stylesheet" media="screen"/>
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <!-- El logotipo y el icono que despliega el menú se agrupan
+        para mostrarlos mejor en los dispositivos móviles -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+              data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Menú</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">LOGOMEX</a>
+    </div>
+     
+      <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+           otro elemento que se pueda ocultar al minimizar la barra -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Envíos</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Catálogos<b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#clientes">Clientes</a></li>
+              <li><a href="#contactos">Contactos</a></li>
+              <li><a href="#segmentos">Segmentos</a></li>
+              <!--li class="divider">Contatos</li-->
+            </ul>
+          </li>
+          <li><a class="logout" href="#logout">Salir</a></li>
+        </ul>
+      
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Acerca de...</a></li>      
+        </ul>
+      </div>
+    </nav>      
+
+<div class="container">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div id="content" class="col-sm-12 col-md-12 col-lg-12 content-padding-top"></div>
+        <a id="main-new-link" class="btn btn-default button-new-margin-top" href="#"><i class="icon-edit"></i> <span id="main-new-label" style="font-weight:bold">Envio</span> Nuevo</a>
+    </div>
+</div>
+
+
+<nav class="navbar navbar-default bottom-navbar-margin" role="navigation">
+  <p class="text-center footer-top-padding">
+      Xomotl ©
+  </p>
+</nav>
+
+    <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="lib/jquery-1.11.0.min.js"></script>
+    <script src="lib/jqueryui-1.10.4.min.js"></script>
+    <script src="lib/combobox.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/backbone-min.js"></script>
+    <!-- <script src="lib/backbone-localstorage.js"></script> -->
+    <!-- <script src="lib/jquery.backbone.widgets.js"></script> --> <!-- for autocomplete? -->
+    <script src="lib/bootstrap.js"></script>
+    <!--script src="lib/jquery.datetimepicker.js"></script-->
+    <script src="lib/bootstrap-datetimepicker.js"></script>
+    <script src="lib/locales/bootstrap-datetimepicker.es.js"></script>
+
+    <script src="lib/moment.min.js"></script>
+
+    <script src="js/utils.js"></script><!--default-->
+    <script src="js/models/models.js"></script>
+    <script src="js/models/clients.js"></script>
+    <script src="js/models/contacts.js"></script>
+    <script src="js/models/segments.js"></script>
+    <script src="js/models/subsegments.js"></script>
+    <script src="js/models/locations.js"></script>
+    <script src="js/models/vehicles.js"></script>
+    <script src="js/models/drivers.js"></script>
+    <script src="js/models/statuses.js"></script>
+    <script src="js/models/shippings.js"></script>
+    <script src="js/views/loginView.js"></script>
+    <script src="js/views/paginator.js"></script>
+    <script src="js/views/header.js"></script>
+    <script src="js/views/clients/clientListView.js"></script>
+    <script src="js/views/clients/clientDetails.js"></script>
+    <script src="js/views/contacts/contactsListView.js"></script>
+    <script src="js/views/contacts/contactsDetails.js"></script>
+    <script src="js/views/segments/segmentsListView.js"></script>
+    <script src="js/views/segments/segmentsDetails.js"></script>
+    <script src="js/views/shippings/shippingsListView.js"></script>
+    <script src="js/views/shippings/shippingsDetails.js"></script>
+    
+    <script src="js/views/about.js"></script>
+    
+    <script src="js/main.js"></script>
+
+    <script>
+      Backbone.emulateHTTP = true;
+      moment.lang('es');
+      //var format='D M YYYY - HH:mm';
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<div class="row">
+
+    <form class="form-horizontal col-sm-12 col-md-12 col-lg-12">
+
+
+        <fieldset>
+
+            <legend>Detalles del Envío</legend>
+            <br/>
+
+            <div class="row">
+                <div class="span9">
+
+                    <div class="form-group">
+                        <label for="shippingId" class="control-label col-xs-8 col-md-2 col-lg-2">ID Sistema:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input id="shippingId" name="id" type="text" class="form-control" value="<%= shipping.id === null ? '' : shipping.id %>" class="span1"
+                                   disabled/>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="numero_servicio" class="control-label col-xs-8 col-md-2 col-lg-2">N&uacute;mero de Servicio:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="numero_servicio" name="numero_servicio" value="<%= shipping.numero_servicio === null ? '' : shipping.numero_servicio %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="fecha_hora_solicitud" class="control-label col-xs-8 col-md-2 col-lg-2">Fecha de la Solicitud:</label>
+                        
+                        <div class="col-xs-6 col-md-6 col-lg-8 input-group input-append date form_datetime" data-date="2013-02-21T15:25:00Z">
+                            <input type="text" class="form-control" id="fecha_hora_solicitud" name="fecha_hora_solicitud" value="<%= shipping.fecha_hora_solicitud %>" readonly/>
+                            <span class="help-inline"></span>                            
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="clientes_id" class="control-label col-xs-8 col-md-2 col-lg-2">Cliente:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="clientes_nombre" data-target="clientes_id" data-collection="clients" name="clientes_nombre" value="<%= shipping.clientes.nombre == null ? '' : shipping.clientes.nombre  %>"/>
+                            <input type="hidden" id="clientes_id" name="clientes_id" value="<%= shipping.clientes_id == null ? '' : shipping.clientes_id %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="segmento_id" class="control-label col-xs-8 col-md-2 col-lg-2">Segmento:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="segmento_nombre" data-target="segmento_id" data-collection="segments" name="segmento_nombre" 
+                            	value="<%= shipping.segmento.nombre == null ? '' : shipping.segmento.nombre  %>"
+                                disabled="<%= shipping.clientes_id == null ? 'disabled':'' %>"/>
+                            <input type="hidden" id="segmento_id" name="segmento_id" value="<%= shipping.segmento_id == null ? '' : shipping.segmento_id%>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subsegmento_id" class="control-label col-xs-8 col-md-2 col-lg-2">Subsegmento:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="subsegmento_nombre" data-target="subsegmento_id" data-collection="subSegments" name="subsegmento_nombre" 
+                            	value="<%= shipping.subsegmento.nombre == null ? '' : shipping.subsegmento.nombre  %>"
+                                disabled="<%= shipping.segmento_id == null ? 'disabled':'' %>"/>
+                            <input type="hidden" id="subsegmento_id" name="subsegmento_id" value="<%= shipping.subsegmento_id == null ? '' : shipping.subsegmento_id %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactos_id" class="control-label col-xs-8 col-md-2 col-lg-2">Contacto:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="contactos_nombre" data-target="contactos_id" data-collection="contacts" name="contactos_nombre" 
+                            	value="<%= shipping.contactos.nombre == null ? '' : shipping.contactos.nombre  %>"/>
+                            <input type="hidden" id="contactos_id" name="contactos_id" value="<%= shipping.contactos_id == null ? '' : shipping.contactos_id %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ubicaciones_origen_id" class="control-label col-xs-8 col-md-2 col-lg-2">Origen:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="ubicaciones_origen_nombre" data-target="ubicaciones_origen_id" data-collection="locations" name="ubicaciones_origen_nombre" value="<%= shipping.ubicaciones_origen.nombre == null ? '' : shipping.ubicaciones_origen.nombre  %>"/>
+                            <input type="hidden" id="ubicaciones_origen_id" name="ubicaciones_origen_id" value="<%= shipping.ubicaciones_origen_id == null ? '' : shipping.ubicaciones_origen_id %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ubicaciones_destino_id" class="control-label col-xs-8 col-md-2 col-lg-2">Destino:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="ubicaciones_destino_nombre" data-target="ubicaciones_destino_id" data-collection="locations" name="ubicaciones_destino_nombre" value="<%= shipping.ubicaciones_destino.nombre == null ? '' : shipping.ubicaciones_destino.nombre  %>"/>
+                            <input type="hidden" id="ubicaciones_destino_id" name="ubicaciones_destino_id" value="<%= shipping.ubicaciones_destino_id == null ? '' : shipping.ubicaciones_destino_id %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fecha_hora_servicio" class="control-label col-xs-8 col-md-2 col-lg-2">Fecha del Servicio:</label>
+                        <div class="col-xs-6 col-md-6 col-lg-8 input-group input-append date form_datetime" data-date="2013-02-21T15:25:00Z">
+                            <input type="text" class="form-control" id="fecha_hora_servicio" name="fecha_hora_servicio" value="<%= shipping.fecha_hora_servicio %>" readonly/>
+                            <span class="help-inline"></span>                            
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="folio" class="control-label col-xs-8 col-md-2 col-lg-2">Folio:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="folio" name="folio" value="<%= shipping.folio %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vehiculos_id" class="control-label col-xs-8 col-md-2 col-lg-2">Veh&iacute;culo:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="vehiculos_economico" data-target="vehiculos_id" data-collection="vehicles" name="vehiculos_economico" value="<%= shipping.vehiculos.economico == null ? '' : shipping.vehiculos.economico  %>"/>
+                            <input type="hidden" id="vehiculos_id" name="vehiculos_id" value="<%= shipping.vehiculos_id == null ? '' : shipping.vehiculos_id %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="choferes_id" class="control-label col-xs-8 col-md-2 col-lg-2">Chofer:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="choferes_nombre" data-target="choferes_id" data-collection="drivers" name="choferes_nombre" value="<%= shipping.choferes.nombre == null ? '' : (shipping.choferes.nombre + ' ' + shipping.choferes.apellidos) %>"/>
+                            <input type="hidden" id="choferes_id" name="choferes_id" value="<%= shipping.choferes_id == null ? '' : shipping.choferes_id %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="observaciones" class="control-label col-xs-8 col-md-2 col-lg-2">Observaciones:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="observaciones" name="observaciones" value="<%= shipping.observaciones %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="statuses_id" class="control-label col-xs-8 col-md-2 col-lg-2">Estatus:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <select id="statuses_id" name="statuses_id">
+                                <option value="" >Elija uno</option>
+                                <% _(statuses).each(function(status) { %>
+                                    <option value="<%= status.id %>" <%= status.id == shipping.statuses_id ?'selected':'' %> ><%= status.descripcion %></option>
+                                <% }); %>
+                            </select>
+                            <span class="help-inline"></span>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </fieldset>
+
+        <div class="form-actions">
+            <a href="#" class="btn btn-primary save">Registrar</a>
+            <a href="#" class="btn btn-danger delete">Borrar</a>
+        </div>
+
+    </form>
+
+</div>
+
+<div class="row status-bar">
+    <div class="span12">
+        <div class="alert alert-success" style="display: none">
+            <b>Exitooo!</b> Envío Registrado con exito
+        </div>
+    </div>
+</div>

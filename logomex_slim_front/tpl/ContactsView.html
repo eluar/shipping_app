@@ -1,0 +1,122 @@
+<div class="row">
+
+    <form class="form-horizontal col-sm-12 col-md-12 col-lg-12">
+
+
+        <fieldset>
+
+            <legend>Detalles de Contacto</legend>
+            <br/>
+
+            <div class="row">
+                <div class="span9">
+
+                    <div class="form-group">
+                        <label for="clientId" class="control-label col-xs-8 col-md-2 col-lg-2">Id:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input id="clientId" name="id" type="text" class="form-control" value="<%= contact.id === null ? '' : contact.id %>" class="span1"
+                                   disabled/>
+                        </div>
+                    </div>
+
+                    <div class="form-group"><!-- select -->
+                        <label for="clientes_id" class="control-label col-xs-8 col-md-2 col-lg-2">Cliente:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <select id="clientes_id" name="clientes_id">
+                                <% _(clients).each(function(client) { %>
+                                    <option value="<%= client.id %>" <%= client.id == contact.clientes_id ? 'selected' : '' %> ><%= client.nombre %></option>
+                                <% }); %>
+                            </select>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div><!-- select -->
+                    
+                    <div class="form-group">
+                        <label for="nombre" class="control-label col-xs-8 col-md-2 col-lg-2">Nombre:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="<%= contact.nombre %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono" class="control-label col-xs-8 col-md-2 col-lg-2">Telefono:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="telefono" name="telefono" value="<%= contact.telefono %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="extension" class="control-label col-xs-8 col-md-2 col-lg-2">Extensi&oacute;n:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="extencion" name="extension" value="<%= contact.extension %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="celular" class="control-label col-xs-8 col-md-2 col-lg-2">Celular:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="celular" name="celular" value="<%= contact.celular === null ? '' : contact.celular %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="control-label col-xs-8 col-md-2 col-lg-2">E-mail:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <input type="text" class="form-control" id="email" name="email" value="<%= contact.email === null ? '' : contact.email %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="descripcion" class="control-label col-xs-8 col-md-2 col-lg-2">Comentarios:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-10">
+                            <textarea id="descripcion" name="descripcion" class="form-control" rows="6"><%= contact.comentarios %></textarea>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activo" class="control-label col-xs-8 col-md-2 col-lg-2">Activo:</label>
+
+                        <div class="col-xs-10 col-md-8 col-lg-6">
+                            <select class="col-xs-8 col-md-6 col-lg-6" id="active" name="activo" value="<%= contact.activo %>">
+                                <option value="0" <%= contact.activo == 0?'selected':'' %> >No</option>
+                                <option value="1" <%= contact.activo == 1?'selected':'' %> >Si</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </fieldset>
+
+        <div class="form-actions">
+            <a href="#" class="btn btn-primary save">Registrar</a>
+            <a href="#" class="btn btn-danger delete">Borrar</a>
+        </div>
+
+    </form>
+
+</div>
+
+<div class="row status-bar">
+    <div class="span12">
+        <div class="alert alert-success" style="display: none">
+            <b>Exitooo!</b> Cliente Registrado con exito
+        </div>
+    </div>
+</div>
